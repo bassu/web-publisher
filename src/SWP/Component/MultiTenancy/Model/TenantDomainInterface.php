@@ -59,4 +59,11 @@ interface TenantDomainInterface extends TimestampableInterface, EnableableInterf
      * @param string $domainName
      */
     public function setDomainName($domainName);
+
+    /**
+     * @return TenantInterface
+     */
+    public function getTenant();
+
+    public function setTenant(TenantInterface $tenant);
 }

@@ -40,6 +40,10 @@ class TenantDomain implements TenantDomainInterface
     protected $domainName;
 
     /**
+     * @var TenantInterface
+     */
+    protected $tenant;
+    /**
      * Tenant constructor.
      */
     public function __construct()
@@ -93,6 +97,22 @@ class TenantDomain implements TenantDomainInterface
     public function setDomainName($domainName)
     {
         $this->domainName = $domainName;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setTenant(TenantInterface $tenant)
+    {
+        $this->tenant = $tenant;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getTenant()
+    {
+        return $this->tenant;
     }
 
     /**
